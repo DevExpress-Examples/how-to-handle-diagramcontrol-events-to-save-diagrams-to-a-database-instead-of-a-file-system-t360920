@@ -1,3 +1,14 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [DiagramOpenDialog.cs](./CS/XtraDiagram.CustomDiagramStorage/DiagramOpenDialog.cs) (VB: [DiagramOpenDialog.vb](./VB/XtraDiagram.CustomDiagramStorage/DiagramOpenDialog.vb))
+* [DiagramSaveDialog.cs](./CS/XtraDiagram.CustomDiagramStorage/DiagramSaveDialog.cs) (VB: [DiagramSaveDialog.vb](./VB/XtraDiagram.CustomDiagramStorage/DiagramSaveDialog.vb))
+* [DiagramSelector.cs](./CS/XtraDiagram.CustomDiagramStorage/DiagramSelector.cs) (VB: [DiagramSelector.vb](./VB/XtraDiagram.CustomDiagramStorage/DiagramSelector.vb))
+* [DiagramStorage.cs](./CS/XtraDiagram.CustomDiagramStorage/DiagramStorage.cs) (VB: [DiagramStorageInitializer.vb](./VB/XtraDiagram.CustomDiagramStorage/DiagramStorageInitializer.vb))
+* [DiagramStorageInitializer.cs](./CS/XtraDiagram.CustomDiagramStorage/DiagramStorageInitializer.cs) (VB: [DiagramStorageInitializer.vb](./VB/XtraDiagram.CustomDiagramStorage/DiagramStorageInitializer.vb))
+* [Form1.cs](./CS/XtraDiagram.CustomDiagramStorage/Form1.cs) (VB: [Form1.vb](./VB/XtraDiagram.CustomDiagramStorage/Form1.vb))
+* [Program.cs](./CS/XtraDiagram.CustomDiagramStorage/Program.cs) (VB: [Program.vb](./VB/XtraDiagram.CustomDiagramStorage/Program.vb))
+<!-- default file list end -->
 # How to handle DiagramControl events to save diagrams to a database instead of a file system
 
 
