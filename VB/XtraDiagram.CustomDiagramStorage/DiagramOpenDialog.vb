@@ -1,18 +1,15 @@
-﻿Imports System
-Imports System.Collections.Generic
+Imports System
 Imports System.ComponentModel
-Imports System.Data
 Imports System.Drawing
-Imports System.Text
-Imports System.Linq
 Imports System.Windows.Forms
 Imports DevExpress.XtraEditors
 
 Namespace XtraDiagram.CustomDiagramStorage
-    Partial Public Class DiagramOpenDialog
-        Inherits DevExpress.XtraEditors.XtraForm
 
-        Public Property SelectedItem() As String
+    Public Partial Class DiagramOpenDialog
+        Inherits XtraForm
+
+        Public Property SelectedItem As String
 
         Public Sub New()
             InitializeComponent()
@@ -24,12 +21,10 @@ Namespace XtraDiagram.CustomDiagramStorage
         End Sub
 
         Private Sub PopulateListBox()
-            If Not DesignMode Then
-                listBoxControl1.DataSource = DiagramRepository.GetDiagramNames()
-            End If
+            If Not DesignMode Then listBoxControl1.DataSource = DiagramRepository.GetDiagramNames()
         End Sub
 
-        Private Sub listBoxControl1_MouseDoubleClick(ByVal sender As Object, ByVal e As MouseEventArgs) Handles listBoxControl1.MouseDoubleClick
+        Private Sub listBoxControl1_MouseDoubleClick(ByVal sender As Object, ByVal e As MouseEventArgs)
             Dim itemIndex = listBoxControl1.IndexFromPoint(e.Location)
             If itemIndex > -1 Then
                 DialogResult = DialogResult.OK
@@ -37,7 +32,7 @@ Namespace XtraDiagram.CustomDiagramStorage
             End If
         End Sub
 
-        Private Sub listBoxControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles listBoxControl1.SelectedIndexChanged
+        Private Sub listBoxControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
             OnSelectedItemChanged()
         End Sub
 
