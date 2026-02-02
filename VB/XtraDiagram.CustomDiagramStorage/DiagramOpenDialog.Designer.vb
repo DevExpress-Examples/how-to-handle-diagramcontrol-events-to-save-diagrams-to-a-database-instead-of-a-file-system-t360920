@@ -1,5 +1,7 @@
-﻿Namespace XtraDiagram.CustomDiagramStorage
-    Partial Public Class DiagramOpenDialog
+Namespace XtraDiagram.CustomDiagramStorage
+
+    Partial Class DiagramOpenDialog
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -27,7 +29,7 @@
             Me.simpleButton2 = New DevExpress.XtraEditors.SimpleButton()
             Me.listBoxControl1 = New DevExpress.XtraEditors.ListBoxControl()
             Me.panel1 = New System.Windows.Forms.Panel()
-            DirectCast(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.listBoxControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panel1.SuspendLayout()
             Me.SuspendLayout()
             ' 
@@ -61,6 +63,8 @@
             Me.listBoxControl1.Name = "listBoxControl1"
             Me.listBoxControl1.Size = New System.Drawing.Size(389, 290)
             Me.listBoxControl1.TabIndex = 2
+            AddHandler Me.listBoxControl1.SelectedIndexChanged, New System.EventHandler(AddressOf Me.listBoxControl1_SelectedIndexChanged)
+            AddHandler Me.listBoxControl1.MouseDoubleClick, New System.Windows.Forms.MouseEventHandler(AddressOf Me.listBoxControl1_MouseDoubleClick)
             ' 
             ' panel1
             ' 
@@ -82,17 +86,18 @@
             Me.Name = "DiagramOpenDialog"
             Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
             Me.Text = "DiagramSelector"
-            DirectCast(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.listBoxControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.panel1.ResumeLayout(False)
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+#End Region
         Private simpleButton1 As DevExpress.XtraEditors.SimpleButton
+
         Private simpleButton2 As DevExpress.XtraEditors.SimpleButton
-        Protected WithEvents listBoxControl1 As DevExpress.XtraEditors.ListBoxControl
+
+        Protected listBoxControl1 As DevExpress.XtraEditors.ListBoxControl
+
         Private panel1 As System.Windows.Forms.Panel
     End Class
 End Namespace

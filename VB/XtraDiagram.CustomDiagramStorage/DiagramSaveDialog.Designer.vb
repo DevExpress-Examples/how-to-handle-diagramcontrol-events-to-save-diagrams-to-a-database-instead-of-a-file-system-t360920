@@ -1,5 +1,7 @@
-﻿Namespace XtraDiagram.CustomDiagramStorage
-    Partial Public Class DiagramSaveDialog
+Namespace XtraDiagram.CustomDiagramStorage
+
+    Partial Class DiagramSaveDialog
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,22 +12,22 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
-        Private Sub InitializeComponent()
+        Private Overloads Sub InitializeComponent()
             Me.textEdit1 = New DevExpress.XtraEditors.TextEdit()
-            DirectCast(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.textEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.listBoxControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.textEdit1.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' listBoxControl1
@@ -53,14 +55,12 @@
             Me.Text = "DiagramSaveDialog"
             Me.Controls.SetChildIndex(Me.listBoxControl1, 0)
             Me.Controls.SetChildIndex(Me.textEdit1, 0)
-            DirectCast(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.textEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.listBoxControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.textEdit1.Properties), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+#End Region
         Private textEdit1 As DevExpress.XtraEditors.TextEdit
     End Class
 End Namespace
