@@ -1,15 +1,9 @@
-﻿Imports System
-Imports System.Collections.Generic
 Imports System.ComponentModel
-Imports System.Data
 Imports System.Drawing
-Imports System.Text
-Imports System.Linq
-Imports System.Windows.Forms
-Imports DevExpress.XtraEditors
 
 Namespace XtraDiagram.CustomDiagramStorage
-    Partial Public Class DiagramSaveDialog
+
+    Public Partial Class DiagramSaveDialog
         Inherits DiagramOpenDialog
 
         Public Sub New()

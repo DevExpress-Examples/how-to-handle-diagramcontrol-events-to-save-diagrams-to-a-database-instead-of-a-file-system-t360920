@@ -1,11 +1,9 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.Text
 Imports System.Windows.Forms
 
 Namespace XtraDiagram.CustomDiagramStorage
+
     Public Class DiagramSelector
+
         Public Shared Function SelectDiagramToOpen() As String
             Dim selector = New DiagramOpenDialog() With {.Text = "Choose a diagram to open"}
             Return ShowDialogCore(selector)

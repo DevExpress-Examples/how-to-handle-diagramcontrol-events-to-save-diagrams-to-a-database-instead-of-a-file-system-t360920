@@ -1,28 +1,22 @@
-﻿Imports System
-Imports System.Collections.Generic
+Imports System
 Imports System.Data.Entity
-Imports System.Linq
 Imports System.Windows.Forms
 Imports DevExpress.Internal
 
 Namespace XtraDiagram.CustomDiagramStorage
-    Friend NotInheritable Class Program
 
-        Private Sub New()
-        End Sub
+    Friend Module Program
 
         ''' <summary>
         ''' The main entry point for the application.
         ''' </summary>
-        <STAThread> _
-        Shared Sub Main()
-            Application.EnableVisualStyles()
+        <STAThread>
+        Sub Main()
+            Call Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
-
-            DbEngineDetector.PatchConnectionStringsAndConfigureEntityFrameworkDefaultConnectionFactory()
-            Database.SetInitializer(New DiagramStorageInitializer())
-
-            Application.Run(New Form1())
+            Call DbEngineDetector.PatchConnectionStringsAndConfigureEntityFrameworkDefaultConnectionFactory()
+            Call Database.SetInitializer(New DiagramStorageInitializer())
+            Call Application.Run(New Form1())
         End Sub
-    End Class
+    End Module
 End Namespace

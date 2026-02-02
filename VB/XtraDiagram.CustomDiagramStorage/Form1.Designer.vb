@@ -1,5 +1,7 @@
-﻿Namespace XtraDiagram.CustomDiagramStorage
-    Partial Public Class Form1
+Namespace XtraDiagram.CustomDiagramStorage
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,22 +12,22 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+#Region "Windows Form Designer generated code"
         Private Sub InitializeComponent()
             Me.diagramControl1 = New DevExpress.XtraDiagram.DiagramControl()
             Me.toolboxControl1 = New DevExpress.XtraToolbox.ToolboxControl()
             Me.ribbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
             Me.splitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-            DirectCast(Me.diagramControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.diagramControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.ribbonControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.splitContainerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.splitContainerControl1.SuspendLayout()
             Me.SuspendLayout()
             ' 
@@ -41,11 +43,15 @@
             Me.diagramControl1.OptionsView.PageSize = New System.Drawing.SizeF(800F, 600F)
             Me.diagramControl1.OptionsView.ShowGrid = True
             Me.diagramControl1.OptionsView.ShowRulers = True
-            Me.diagramControl1.SelectedStencils = New DevExpress.Diagram.Core.StencilCollection(New String(){})
+            Me.diagramControl1.SelectedStencils = New DevExpress.Diagram.Core.StencilCollection(New String(-1) {})
             Me.diagramControl1.Size = New System.Drawing.Size(1040, 757)
             Me.diagramControl1.TabIndex = 0
             Me.diagramControl1.Text = "diagramControl1"
             Me.diagramControl1.Toolbox = Me.toolboxControl1
+            AddHandler Me.diagramControl1.ShowingOpenDialog, New System.EventHandler(Of DevExpress.XtraDiagram.DiagramShowingOpenDialogEventArgs)(AddressOf Me.OnShowingOpenDialog)
+            AddHandler Me.diagramControl1.ShowingSaveDialog, New System.EventHandler(Of DevExpress.XtraDiagram.DiagramShowingSaveDialogEventArgs)(AddressOf Me.OnShowingSaveDialog)
+            AddHandler Me.diagramControl1.CustomSaveDocument, New System.EventHandler(Of DevExpress.XtraDiagram.DiagramCustomSaveDocumentEventArgs)(AddressOf Me.OnCustomSaveDocument)
+            AddHandler Me.diagramControl1.CustomLoadDocument, New System.EventHandler(Of DevExpress.XtraDiagram.DiagramCustomLoadDocumentEventArgs)(AddressOf Me.OnCustomLoadDocument)
             ' 
             ' toolboxControl1
             ' 
@@ -63,7 +69,7 @@
             ' ribbonControl1
             ' 
             Me.ribbonControl1.ExpandCollapseItem.Id = 0
-            Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() { Me.ribbonControl1.ExpandCollapseItem})
+            Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem})
             Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
             Me.ribbonControl1.MaxItemId = 1
             Me.ribbonControl1.Name = "ribbonControl1"
@@ -93,20 +99,21 @@
             Me.Name = "Form1"
             Me.Ribbon = Me.ribbonControl1
             Me.Text = "Form1"
-            DirectCast(Me.diagramControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.splitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.diagramControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.ribbonControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.splitContainerControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.splitContainerControl1.ResumeLayout(False)
             Me.ResumeLayout(False)
             Me.PerformLayout()
-
         End Sub
 
-        #End Region
+#End Region
         Private ribbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
+
         Private splitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
-        Private WithEvents diagramControl1 As DevExpress.XtraDiagram.DiagramControl
+
+        Private diagramControl1 As DevExpress.XtraDiagram.DiagramControl
+
         Private toolboxControl1 As DevExpress.XtraToolbox.ToolboxControl
     End Class
 End Namespace
-

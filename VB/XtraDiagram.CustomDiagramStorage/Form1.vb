@@ -1,59 +1,57 @@
-﻿Imports System
-Imports System.Collections.Generic
+Imports System
 Imports System.ComponentModel
-Imports System.Data
 Imports System.Drawing
 Imports System.IO
-Imports System.Linq
-Imports System.Text
-Imports System.Windows.Forms
-Imports System.Windows.Threading
-Imports DevExpress.Diagram.Core
 Imports DevExpress.XtraDiagram
 
 Namespace XtraDiagram.CustomDiagramStorage
-    Partial Public Class Form1
+
+    Public Partial Class Form1
         Inherits DevExpress.XtraBars.Ribbon.RibbonForm
 
         Public Sub New()
             InitializeComponent()
         End Sub
+
         Protected Overrides Sub OnLoad(ByVal e As EventArgs)
             MyBase.OnLoad(e)
             diagramControl1.InitializeRibbon(ribbonControl1)
             diagramControl1.OpenFile()
         End Sub
-        Private Sub OnShowingOpenDialog(ByVal sender As Object, ByVal e As DiagramShowingOpenDialogEventArgs) Handles diagramControl1.ShowingOpenDialog
+
+        Private Sub OnShowingOpenDialog(ByVal sender As Object, ByVal e As DiagramShowingOpenDialogEventArgs)
             Dim diagramName = DiagramSelector.SelectDiagramToOpen()
-            If diagramName IsNot Nothing Then
+            If Not Equals(diagramName, Nothing) Then
                 e.DocumentSourceToOpen = diagramName
             Else
                 e.Cancel = True
             End If
         End Sub
-        Private Sub OnCustomLoadDocument(ByVal sender As Object, ByVal e As DiagramCustomLoadDocumentEventArgs) Handles diagramControl1.CustomLoadDocument
+
+        Private Sub OnCustomLoadDocument(ByVal sender As Object, ByVal e As DiagramCustomLoadDocumentEventArgs)
             If e.DocumentSource Is Nothing Then
                 diagramControl1.NewDocument()
                 Text = "(New Document)"
                 Return
             End If
+
             Dim diagramName = CStr(e.DocumentSource)
             Text = diagramName
             Dim diagramData = DiagramRepository.GetDiagramData(diagramName)
-            If diagramData IsNot Nothing Then
-                diagramControl1.LoadDocument(New MemoryStream(diagramData))
-            End If
+            If diagramData IsNot Nothing Then diagramControl1.LoadDocument(New MemoryStream(diagramData))
             e.Handled = True
         End Sub
-        Private Sub OnShowingSaveDialog(ByVal sender As Object, ByVal e As DiagramShowingSaveDialogEventArgs) Handles diagramControl1.ShowingSaveDialog
+
+        Private Sub OnShowingSaveDialog(ByVal sender As Object, ByVal e As DiagramShowingSaveDialogEventArgs)
             Dim diagramName = DiagramSelector.SelectDiagramToSave()
-            If diagramName IsNot Nothing Then
+            If Not Equals(diagramName, Nothing) Then
                 e.DocumentSourceToSave = diagramName
             Else
                 e.Cancel = True
             End If
         End Sub
-        Private Sub OnCustomSaveDocument(ByVal sender As Object, ByVal e As DiagramCustomSaveDocumentEventArgs) Handles diagramControl1.CustomSaveDocument
+
+        Private Sub OnCustomSaveDocument(ByVal sender As Object, ByVal e As DiagramCustomSaveDocumentEventArgs)
             Dim diagramName = CStr(e.DocumentSource)
             Text = diagramName
             Dim stream = New MemoryStream()
